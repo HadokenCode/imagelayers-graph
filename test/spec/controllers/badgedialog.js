@@ -102,7 +102,7 @@ describe('Controller: BadgedialogCtrl', function () {
     it('should return an HTML embed code', function () {
       scope.selectedImage = { name: 'node', tag: 'latest', selected: true };
       var embedCode = scope.badgeAsHtml();
-      expect(embedCode.$$unwrapTrustedValue()).toEqual("<a href='https://imagelayers.io/?images=node:latest' title='Get your own badge on imagelayers.io'><img src='https://badge.imagelayers.io/node:latest.svg'></a>")
+      expect(embedCode.$$unwrapTrustedValue()).toEqual("<a href='http://imagelayers.iron.io/?images=node:latest' title='Get your own badge on imagelayers.iron.io'><img src='http://badge.imagelayers.iron.io/node:latest.svg'></a>")
     });
   });
 
@@ -110,7 +110,7 @@ describe('Controller: BadgedialogCtrl', function () {
     it('should return an HTML embed code', function () {
       scope.selectedImage = { name: 'node', tag: 'latest', selected: true };
       var embedCode = scope.badgeAsMarkdown();
-      expect(embedCode).toEqual("[![](https://badge.imagelayers.io/node:latest.svg)](https://imagelayers.io/?images=node:latest 'Get your own badge on imagelayers.io')")
+      expect(embedCode).toEqual("[![](http://badge.imagelayers.iron.io/node:latest.svg)](http://imagelayers.iron.io/?images=node:latest 'Get your own badge on imagelayers.iron.io')")
     });
   });
 });

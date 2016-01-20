@@ -70,8 +70,8 @@
         return "";
       }
       
-      return $sce.trustAsHtml("<a href='https://imagelayers.io/?images=" + $scope.selectedImage.name + ":" + $scope.selectedImage.tag + "' title='Get your own badge on imagelayers.io'>" +
-      "<img src='https://badge.imagelayers.io/" + $scope.selectedImage.name + ":" + $scope.selectedImage.tag + ".svg'></a>");
+      return $sce.trustAsHtml("<a href='http://imagelayers.iron.io/?images=" + $scope.selectedImage.name + ":" + $scope.selectedImage.tag + "' title='Get your own badge on imagelayers.iron.io'>" +
+      "<img src='http://badge.imagelayers.iron.io/" + $scope.selectedImage.name + ":" + $scope.selectedImage.tag + ".svg'></a>");
     };
 
     $scope.badgeAsMarkdown = function () {
@@ -79,8 +79,8 @@
         return "";
       }
       
-      return "[![](https://badge.imagelayers.io/" + $scope.selectedImage.name + ":" + $scope.selectedImage.tag + ".svg)]" +
-        "(https://imagelayers.io/?images=" + $scope.selectedImage.name + ":" + $scope.selectedImage.tag + " 'Get your own badge on imagelayers.io')";
+      return "[![](http://badge.imagelayers.iron.io/" + $scope.selectedImage.name + ":" + $scope.selectedImage.tag + ".svg)]" +
+        "(http://imagelayers.iron.io/?images=" + $scope.selectedImage.name + ":" + $scope.selectedImage.tag + " 'Get your own badge on imagelayers.iron.io')";
     };
   }
 })();

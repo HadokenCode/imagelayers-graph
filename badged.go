@@ -26,7 +26,7 @@ const svgTemplate = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http:/
 		<rect x="98" y="0" width="117" height="20" fill="#007ec6"/>
 	</g>
 	<g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="11">
-		<text x="50" y="14">{{ .ImageName }}</text>
+		<text x="50" y="14">ImageLayers</text>
 		<text x="155" y="14">{{ .Size }} / {{ .Layers }}</text>
 	</g>
 </svg>`
@@ -102,10 +102,9 @@ func (bd badgeD) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-type", "image/svg+xml")
 	var buf bytes.Buffer
 	bd.renderer.Execute(&buf, struct {
-		ImageName string
-		Size      string
-		Layers    string
-	}{image + ":" + tag, humanize.Bytes(data[0].Repo.Size), fmt.Sprint(data[0].Repo.Count, " layers")})
+		Size   string
+		Layers string
+	}{humanize.Bytes(data[0].Repo.Size), fmt.Sprint(data[0].Repo.Count, " layers")})
 
 	bd.cache[image+tag] = buf.String()
 	fmt.Fprint(w, buf.String())
